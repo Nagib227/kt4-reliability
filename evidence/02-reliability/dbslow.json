@@ -1,0 +1,2 @@
+{"ok": 8, "err": 0, "last": "{\"boards\": [{\"id\": 1, \"name\": \"general\", \"posts\": 4}], \"degraded\": true, \"trace_id\": \"2ebe8bd569424eb989118f2c87944beb\"}"}
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{},"value":[1794220549.491,"3"]}]}}

@@ -1,0 +1,8 @@
+configmap=yes
+
+secret=no
+
+operator=202
+{"kill_switch": "kubectl apply -f deploy/fault-off.yaml"}
+intruder=403
+{"error": "denied"}

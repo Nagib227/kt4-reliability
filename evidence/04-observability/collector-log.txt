@@ -1,0 +1,400 @@
+    End time       : 2026-11-09 10:34:23.298759962 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/boards)
+     -> http.status_code: Str(200)
+     -> app.version: Str(kt4)
+ResourceSpans #16
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-api)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : 4cc09ae1bb364f5e9847628c794524dc
+    Parent ID      : 
+    ID             : 4314f24c1646440b
+    Name           : GET /boards
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:23.301057165 +0000 UTC
+    End time       : 2026-11-09 10:34:23.311081319 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/boards)
+     -> http.status_code: Str(200)
+     -> app.version: Str(kt4)
+ResourceSpans #17
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-api)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : 829b32a2f106479aaa2bf31b334fb37f
+    Parent ID      : 
+    ID             : a9b6aaef19834f1b
+    Name           : GET /boards
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:23.313722838 +0000 UTC
+    End time       : 2026-11-09 10:34:23.323340673 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/boards)
+     -> http.status_code: Str(200)
+     -> app.version: Str(kt4)
+ResourceSpans #18
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-api)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : 76b561884a4542a8b6d70f494cce926a
+    Parent ID      : 
+    ID             : 733cd60cf85c4ec3
+    Name           : GET /boards
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:23.325880688 +0000 UTC
+    End time       : 2026-11-09 10:34:23.335651829 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/boards)
+     -> http.status_code: Str(200)
+     -> app.version: Str(kt4)
+ResourceSpans #19
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-api)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : 006ac781f38c4845bfe5ac9ee8f7d2c8
+    Parent ID      : 
+    ID             : eeac4d5893e04abc
+    Name           : GET /boards
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:23.337693522 +0000 UTC
+    End time       : 2026-11-09 10:34:23.352095273 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/boards)
+     -> http.status_code: Str(200)
+     -> app.version: Str(kt4)
+ResourceSpans #20
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-api)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : 762926a11ea04758b3c82611989d2401
+    Parent ID      : 
+    ID             : 25bb478fcf1a4f1c
+    Name           : GET /boards
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:23.354736092 +0000 UTC
+    End time       : 2026-11-09 10:34:23.392871616 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/boards)
+     -> http.status_code: Str(200)
+     -> app.version: Str(kt4)
+ResourceSpans #21
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-api)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : 48ec14ea4203457f8065dfd08b696c87
+    Parent ID      : 
+    ID             : d1e41558732f413c
+    Name           : GET /boards
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:23.396339173 +0000 UTC
+    End time       : 2026-11-09 10:34:23.421366504 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/boards)
+     -> http.status_code: Str(200)
+     -> app.version: Str(kt4)
+ResourceSpans #22
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-api)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : 1bcc12a9b30640c0bce7d12919bbb8e0
+    Parent ID      : 
+    ID             : c7ec2ae6ffe04484
+    Name           : GET /boards
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:23.425069072 +0000 UTC
+    End time       : 2026-11-09 10:34:23.454294893 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/boards)
+     -> http.status_code: Str(200)
+     -> app.version: Str(kt4)
+ResourceSpans #23
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-api)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : 60abfa4fd2074653bc7be5cea9cf829c
+    Parent ID      : 
+    ID             : ec9e5854413b4d8a
+    Name           : GET /boards
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:23.463207096 +0000 UTC
+    End time       : 2026-11-09 10:34:23.491459273 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/boards)
+     -> http.status_code: Str(200)
+     -> app.version: Str(kt4)
+ResourceSpans #24
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-api)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : cd6be5087c75470b9ef02a920caf31c6
+    Parent ID      : 
+    ID             : b4f5faed2ab94a46
+    Name           : GET /boards
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:23.495588259 +0000 UTC
+    End time       : 2026-11-09 10:34:23.521728141 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/boards)
+     -> http.status_code: Str(200)
+     -> app.version: Str(kt4)
+ResourceSpans #25
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-api)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : 8ddc92fcb4554a32bc81abba3b832946
+    Parent ID      : 
+    ID             : a77e8713518143d6
+    Name           : GET /boards
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:23.525417308 +0000 UTC
+    End time       : 2026-11-09 10:34:23.539995967 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/boards)
+     -> http.status_code: Str(200)
+     -> app.version: Str(kt4)
+ResourceSpans #26
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-api)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : 578c4ebd55d14806a6050b670088f7e6
+    Parent ID      : 
+    ID             : 5fa2a4f65a374a53
+    Name           : GET /boards
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:23.543122608 +0000 UTC
+    End time       : 2026-11-09 10:34:23.555064248 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/boards)
+     -> http.status_code: Str(200)
+     -> app.version: Str(kt4)
+ResourceSpans #27
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-api)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : da335c913e1941d9922fa4cbc162cef9
+    Parent ID      : 
+    ID             : 97566e105bc0483f
+    Name           : GET /boards
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:23.557639465 +0000 UTC
+    End time       : 2026-11-09 10:34:23.56837405 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/boards)
+     -> http.status_code: Str(200)
+     -> app.version: Str(kt4)
+ResourceSpans #28
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-api)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : 8a7f00e879ad4d8ab4331c9f718bd05d
+    Parent ID      : 
+    ID             : f09376b87a944dfb
+    Name           : GET /boards
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:23.571219178 +0000 UTC
+    End time       : 2026-11-09 10:34:23.580888216 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/boards)
+     -> http.status_code: Str(200)
+     -> app.version: Str(kt4)
+ResourceSpans #29
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-api)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : 36ba28726b6f470bb3b86b4488586adc
+    Parent ID      : 
+    ID             : 60d27063c28a45e0
+    Name           : GET /boards
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:23.583984756 +0000 UTC
+    End time       : 2026-11-09 10:34:23.595218963 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/boards)
+     -> http.status_code: Str(200)
+     -> app.version: Str(kt4)
+	{"kind": "exporter", "data_type": "traces", "name": "debug"}
+2026-11-09T10:34:24.810Z	info	Traces	{"kind": "exporter", "data_type": "traces", "name": "debug", "resource spans": 3, "spans": 3}
+2026-11-09T10:34:24.810Z	info	ResourceSpans #0
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-api)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : 332ff4a8d7fc462abc1b8c835114c4a7
+    Parent ID      : 
+    ID             : 8ea918ab3def4256
+    Name           : POST /posts
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:24.350603712 +0000 UTC
+    End time       : 2026-11-09 10:34:24.367113458 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/posts)
+     -> http.status_code: Str(201)
+     -> app.version: Str(kt4)
+ResourceSpans #1
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-worker)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(unknown)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : 332ff4a8d7fc462abc1b8c835114c4a7
+    Parent ID      : b4a3433dc6a54e71
+    ID             : 27ff76c3d4c24fee
+    Name           : process post
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:24.421562819 +0000 UTC
+    End time       : 2026-11-09 10:34:24.436096476 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> queue: Str(posts)
+     -> app.version: Str(kt4)
+ResourceSpans #2
+Resource SchemaURL: 
+Resource attributes:
+     -> service.name: Str(campus-api)
+     -> service.version: Str(kt4)
+     -> service.instance.digest: Str(localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope  
+Span #0
+    Trace ID       : ce6f490e82ca403190e8f987129e906a
+    Parent ID      : 
+    ID             : 363691b7546a4624
+    Name           : POST /posts
+    Kind           : Server
+    Start time     : 2026-11-09 10:34:24.719652095 +0000 UTC
+    End time       : 2026-11-09 10:34:24.731507431 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.route: Str(/posts)
+     -> http.status_code: Str(200)
+     -> app.version: Str(kt4)
+	{"kind": "exporter", "data_type": "traces", "name": "debug"}

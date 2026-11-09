@@ -1,0 +1,5 @@
+unsafe:
+namespace/campus-guard unchanged Error from server (Forbidden): error when creating "C:\\Users\\Main_admin\\IThub\\Облачные технологии\\kt4-reliability\\deploy\\unsafe-pod.yaml": pods "unsafe" is forbidden: violates PodSecurity "restricted:latest": privileged (container "unsafe" must not set securityContext.privileged=true), allowPrivilegeEscalation != false (container "unsafe" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container "unsafe" must set securityContext.capabilities.drop=["ALL"]), runAsNonRoot != true (pod or container "unsafe" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container "unsafe" must set securityContext.seccompProfile.type to "RuntimeDefault" or "Localhost")
+auth=no
+
+tcp=TimeoutError

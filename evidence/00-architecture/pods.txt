@@ -1,0 +1,12 @@
+NAME                             READY   STATUS        RESTARTS   AGE     IP               NODE                   NOMINATED NODE   READINESS GATES
+campus-api-6548689489-vl777      1/1     Running       0          15s     192.168.172.58   campus-control-plane   <none>           <none>
+campus-api-6548689489-whvwr      1/1     Running       0          12s     192.168.172.61   campus-control-plane   <none>           <none>
+campus-backup-bsw9p              0/1     Completed     0          3m33s   192.168.172.55   campus-control-plane   <none>           <none>
+campus-worker-6464679587-bfqzc   1/1     Terminating   0          17s     192.168.172.43   campus-control-plane   <none>           <none>
+campus-worker-6b579868b-nq685    1/1     Terminating   0          8m41s   192.168.172.42   campus-control-plane   <none>           <none>
+campus-worker-84f9c6bb7f-r2kkh   1/1     Running       0          15s     192.168.172.57   campus-control-plane   <none>           <none>
+lab-client-7d89999d97-5dcfx      1/1     Running       0          11m     192.168.172.34   campus-control-plane   <none>           <none>
+otel-68ffc779f8-qnnz8            1/1     Running       0          11m     192.168.172.4    campus-control-plane   <none>           <none>
+postgres-646496b5ff-829gr        1/1     Running       0          11m     192.168.172.32   campus-control-plane   <none>           <none>
+postgres-dr-9d695c9cd-ftbtj      1/1     Running       0          11m     192.168.172.9    campus-control-plane   <none>           <none>
+prometheus-6cf6bd8dd6-swwxm      2/2     Running       0          11m     192.168.172.2    campus-control-plane   <none>           <none>

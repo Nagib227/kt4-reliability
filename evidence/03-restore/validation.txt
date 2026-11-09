@@ -1,0 +1,23 @@
+rto_seconds=6
+source:
+           body            |          created_at           
+---------------------------+-------------------------------
+ restore-before-1794220464 | 2026-11-09 10:42:18.154857+00
+ restore-after-1794220464  | 2026-11-09 10:42:23.258876+00
+(2 rows)
+
+
+dr:
+           body            |          created_at           
+---------------------------+-------------------------------
+ trace-marker              | 2026-11-09 10:24:22.078044+00
+ trace-marker              | 2026-11-09 10:25:49.92976+00
+ trace-marker              | 2026-11-09 10:34:24.361089+00
+ restore-before-1794220464 | 2026-11-09 10:42:18.154857+00
+(4 rows)
+
+
+before=201
+{"id": 9, "created": true, "trace_id": "9831846f6bfb492a9ae2942dab6dd341"}
+after=201
+{"id": 10, "created": true, "trace_id": "7badf1086d884b7cb0c9e6c9a3e922de"}

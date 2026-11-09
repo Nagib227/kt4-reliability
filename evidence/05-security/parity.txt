@@ -1,0 +1,67 @@
+source=mirror.gcr.io/library/postgres:16-alpine campus
+
+dr=mirror.gcr.io/library/postgres:16-alpine campus
+
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{},"name":"postgres","namespace":"campus-ready"},"spec":{"ingress":[{"from":[{"podSelector":{"matchLabels":{"app":"campus-api"}}},{"podSelector":{"matchLabels":{"app":"campus-worker"}}},{"podSelector":{"matchLabels":{"app":"backup"}}}],"ports":[{"port":5432}]}],"podSelector":{"matchLabels":{"app":"postgres"}},"policyTypes":["Ingress"]}}
+    creationTimestamp: "2026-11-09T10:22:58Z"
+    generation: 1
+    name: postgres
+    namespace: campus-ready
+    resourceVersion: "16957"
+    uid: e826105f-9876-49f4-9e63-ed302b31bbb8
+  spec:
+    ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            app: campus-api
+      - podSelector:
+          matchLabels:
+            app: campus-worker
+      - podSelector:
+          matchLabels:
+            app: backup
+      ports:
+      - port: 5432
+        protocol: TCP
+    podSelector:
+      matchLabels:
+        app: postgres
+    policyTypes:
+    - Ingress
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.k8s.io/v1","kind":"NetworkPolicy","metadata":{"annotations":{},"name":"postgres-dr","namespace":"campus-ready"},"spec":{"ingress":[{"from":[{"podSelector":{"matchLabels":{"app":"backup"}}}],"ports":[{"port":5432}]}],"podSelector":{"matchLabels":{"app":"postgres-dr"}},"policyTypes":["Ingress"]}}
+    creationTimestamp: "2026-11-09T10:22:58Z"
+    generation: 1
+    name: postgres-dr
+    namespace: campus-ready
+    resourceVersion: "16960"
+    uid: 7cb7ebc7-f674-45a7-b76d-56e1ea381b2a
+  spec:
+    ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            app: backup
+      ports:
+      - port: 5432
+        protocol: TCP
+    podSelector:
+      matchLabels:
+        app: postgres-dr
+    policyTypes:
+    - Ingress
+kind: List
+metadata:
+  resourceVersion: ""

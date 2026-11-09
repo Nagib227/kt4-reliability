@@ -1,0 +1,205 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus
+  namespace: campus-ready
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: 5s
+      evaluation_interval: 5s
+    alerting:
+      alertmanagers:
+        - static_configs:
+            - targets: ["127.0.0.1:9093"]
+    rule_files:
+      - /etc/prometheus/rules.yml
+    scrape_configs:
+      - job_name: campus-api
+        static_configs:
+          - targets: ["campus-api:8080"]
+      - job_name: campus-worker
+        static_configs:
+          - targets: ["campus-worker:8081"]
+      - job_name: otel-collector
+        static_configs:
+          - targets: ["otel:8888"]
+  rules.yml: |
+    groups:
+      - name: campus
+        rules:
+          - alert: CampusBoardFastBurn
+            expr: |
+              (
+                sum(rate(campus_http_requests_total{service="campus-api",route="/boards",status="5xx"}[1m]))
+                /
+                clamp_min(sum(rate(campus_http_requests_total{service="campus-api",route="/boards"}[1m])), 0.001)
+              ) > 0.10
+            for: 30s
+            labels:
+              severity: page
+              owner: operator
+            annotations:
+              summary: "GET /boards: доля 5xx выше 10% за минуту"
+              dashboard: "prometheus campus_http_requests_total"
+              runbook: "runbooks/slo-boards.md"
+          - alert: CampusBoardSlowTicket
+            expr: |
+              (
+                sum(rate(campus_http_slow_total{route="/boards"}[1m]))
+                /
+                clamp_min(sum(rate(campus_http_requests_total{service="campus-api",route="/boards"}[1m])), 0.001)
+              ) > 0.05
+            for: 30s
+            labels:
+              severity: ticket
+              owner: operator
+            annotations:
+              summary: "GET /boards: больше 5% запросов медленнее 400 мс"
+              dashboard: "prometheus campus_http_slow_total"
+              runbook: "runbooks/slo-boards.md"
+          - alert: CampusBoardAuthDenied
+            expr: increase(campus_auth_denied_total[2m]) > 0
+            for: 0s
+            labels:
+              severity: ticket
+              owner: operator
+            annotations:
+              summary: "Тестовая identity получила отказ"
+              dashboard: "prometheus campus_auth_denied_total"
+              runbook: "runbooks/incident.md"
+          - alert: CampusTelemetryDown
+            expr: up{job="campus-api"} == 0
+            for: 1m
+            labels:
+              severity: page
+              owner: operator
+            annotations:
+              summary: "Нет scrape campus-api: telemetry нельзя считать здоровой"
+              dashboard: "prometheus up"
+              runbook: "runbooks/incident.md"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: alertmanager
+  namespace: campus-ready
+data:
+  alertmanager.yml: |
+    route:
+      receiver: campus
+      group_wait: 1s
+      group_interval: 10s
+      repeat_interval: 1h
+    receivers:
+      - name: campus
+        webhook_configs:
+          - url: http://campus-api:8080/internal/alerts
+            send_resolved: true
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+  namespace: campus-ready
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus
+  template:
+    metadata:
+      labels:
+        app: prometheus
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 65534
+        runAsGroup: 65534
+        fsGroup: 65534
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: prometheus
+          image: mirror.gcr.io/prom/prometheus:v2.55.1
+          imagePullPolicy: IfNotPresent
+          args:
+            - --config.file=/etc/prometheus/prometheus.yml
+            - --storage.tsdb.retention.time=2h
+            - --storage.tsdb.retention.size=200MB
+            - --storage.tsdb.path=/prometheus
+          ports:
+            - containerPort: 9090
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          readinessProbe:
+            exec:
+              command: ["/bin/prometheus", "--version"]
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 50m
+              memory: 160Mi
+            limits:
+              memory: 256Mi
+          volumeMounts:
+            - name: config
+              mountPath: /etc/prometheus
+              readOnly: true
+            - name: data
+              mountPath: /prometheus
+        - name: alertmanager
+          image: mirror.gcr.io/prom/alertmanager:v0.27.0
+          imagePullPolicy: IfNotPresent
+          args:
+            - --config.file=/etc/alertmanager/alertmanager.yml
+            - --storage.path=/tmp
+            - --cluster.listen-address=
+          ports:
+            - containerPort: 9093
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          resources:
+            requests:
+              cpu: 10m
+              memory: 32Mi
+            limits:
+              memory: 64Mi
+          volumeMounts:
+            - name: am-config
+              mountPath: /etc/alertmanager
+              readOnly: true
+            - name: am-data
+              mountPath: /tmp
+      volumes:
+        - name: config
+          configMap:
+            name: prometheus
+        - name: am-config
+          configMap:
+            name: alertmanager
+        - name: data
+          emptyDir:
+            sizeLimit: 256Mi
+        - name: am-data
+          emptyDir:
+            sizeLimit: 32Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus
+  namespace: campus-ready
+spec:
+  selector:
+    app: prometheus
+  ports:
+    - port: 9090
+      targetPort: 9090

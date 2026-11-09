@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: campus-fault
+  namespace: campus-ready
+data:
+  fault.json: |
+    {"mode":"off","error_ratio":0,"latency_ms":0,"deadline_ms":400}

@@ -1,0 +1,115 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: campus-api
+  namespace: campus-ready
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: campus-api
+  template:
+    metadata:
+      labels:
+        app: campus-api
+    spec:
+      serviceAccountName: campus-api
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 5
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: campus-api
+      containers:
+        - name: api
+          image: localhost:5001/campus-ready:kt4
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SERVICE_NAME
+              value: campus-api
+            - name: APP_VERSION
+              value: kt4
+            - name: IMAGE_DIGEST
+              value: unknown
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: campus-db
+                  key: url
+            - name: OTEL_ENDPOINT
+              value: http://otel:4318
+            - name: FAULT_PATH
+              value: /etc/campus/fault.json
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          startupProbe:
+            exec:
+              command: ["python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/live', timeout=2)"]
+            periodSeconds: 2
+            failureThreshold: 40
+          livenessProbe:
+            exec:
+              command: ["python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/live', timeout=2)"]
+            periodSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            exec:
+              command: ["python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/ready', timeout=2)"]
+            periodSeconds: 5
+            failureThreshold: 2
+          resources:
+            requests:
+              cpu: 20m
+              memory: 64Mi
+            limits:
+              memory: 128Mi
+          volumeMounts:
+            - name: fault
+              mountPath: /etc/campus
+              readOnly: true
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: fault
+          configMap:
+            name: campus-fault
+        - name: tmp
+          emptyDir:
+            sizeLimit: 16Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: campus-api
+  namespace: campus-ready
+spec:
+  selector:
+    app: campus-api
+  ports:
+    - port: 8080
+      targetPort: 8080
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: campus-api
+  namespace: campus-ready
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: campus-api

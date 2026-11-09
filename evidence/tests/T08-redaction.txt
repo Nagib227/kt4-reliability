@@ -1,0 +1,6 @@
+trace_id=332ff4a8d7fc462abc1b8c835114c4a7
+api=True
+worker=True
+collector=True
+email_in_collector=False
+email_in_api_log=False

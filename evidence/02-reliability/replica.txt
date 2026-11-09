@@ -1,0 +1,34 @@
+victim=campus-api-6548689489-vl777
+before={"ok": 10, "err": 0, "last": "{\"boards\": [{\"id\": 1, \"name\": \"general\", \"posts\": 5}], \"degraded\": false, \"trace_id\": \"4df44ea2697e40fb8ecc24ad04978b66\"}"}
+during={"ok": 20, "err": 0, "last": "{\"boards\": [{\"id\": 1, \"name\": \"general\", \"posts\": 5}], \"degraded\": false, \"trace_id\": \"3372a26e071441da8ab27db264570ecb\"}"}
+after={"ok": 10, "err": 0, "last": "{\"boards\": [{\"id\": 1, \"name\": \"general\", \"posts\": 5}], \"degraded\": false, \"trace_id\": \"ef72a97c669a4f72a35b6a8dc1912802\"}"}
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"policy/v1","kind":"PodDisruptionBudget","metadata":{"annotations":{},"name":"campus-api","namespace":"campus-ready"},"spec":{"minAvailable":1,"selector":{"matchLabels":{"app":"campus-api"}}}}
+  creationTimestamp: "2026-11-09T10:22:56Z"
+  generation: 1
+  name: campus-api
+  namespace: campus-ready
+  resourceVersion: "19289"
+  uid: 0dfe1cdf-7c64-476b-a12a-2ecd306e37e1
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: campus-api
+status:
+  conditions:
+  - lastTransitionTime: "2026-11-09T10:37:01Z"
+    message: ""
+    observedGeneration: 1
+    reason: SufficientPods
+    status: "True"
+    type: DisruptionAllowed
+  currentHealthy: 2
+  desiredHealthy: 1
+  disruptionsAllowed: 1
+  expectedPods: 3
+  observedGeneration: 1

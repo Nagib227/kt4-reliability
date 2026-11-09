@@ -1,0 +1,7 @@
+t0=2026-11-09T13:42:31+03:00
+base={"ok": 10, "err": 0, "last": "{\"boards\": [{\"id\": 1, \"name\": \"general\", \"posts\": 7}], \"degraded\": false, \"trace_id\": \"ba8bbd4d248e4665a43a6a1935a00f7d\"}"}
+inject=2026-11-09T13:43:35+03:00
+detect=2026-11-09T13:46:37+03:00
+kill=2026-11-09T13:47:26+03:00
+recover=2026-11-09T13:49:27+03:00
+final={"ok": 10, "err": 0, "last": "{\"boards\": [{\"id\": 1, \"name\": \"general\", \"posts\": 7}], \"degraded\": false, \"trace_id\": \"14e91848d1b5421f9e1bdd78f30a000b\"}"}

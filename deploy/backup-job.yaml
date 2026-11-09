@@ -1,0 +1,63 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: campus-backup
+  namespace: campus-ready
+spec:
+  backoffLimit: 1
+  ttlSecondsAfterFinished: 86400
+  activeDeadlineSeconds: 180
+  template:
+    metadata:
+      labels:
+        app: backup
+    spec:
+      serviceAccountName: backup-runner
+      automountServiceAccountToken: false
+      restartPolicy: Never
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 999
+        runAsGroup: 999
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: backup
+          image: mirror.gcr.io/library/postgres:16-alpine
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: HOME
+              value: /tmp
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: campus-db
+                  key: password
+          command: ["sh", "-c"]
+          args:
+            - |
+              set -eu
+              pg_dump -h postgres -U campus -d campus -Fc -f /tmp/campus.dump
+              wc -c /tmp/campus.dump
+              sha256sum /tmp/campus.dump
+              psql -h postgres-dr -U campus -d campus -v ON_ERROR_STOP=1 -c "DROP SCHEMA public CASCADE; CREATE SCHEMA public;"
+              pg_restore -h postgres-dr -U campus -d campus --no-owner /tmp/campus.dump
+              echo RESTORE_OK
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          resources:
+            requests:
+              cpu: 20m
+              memory: 64Mi
+            limits:
+              memory: 128Mi
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: tmp
+          emptyDir:
+            sizeLimit: 256Mi

@@ -1,0 +1,17 @@
+id,path,owner,timestamp,revision,redaction,claim
+T00,evidence/00-architecture/image.txt,operator,2026-11-09T13:34:01+03:00,kt4,redacted,Образ, которым запущен стенд
+T00,evidence/00-architecture/pods.txt,operator,2026-11-09T13:34:22+03:00,kt4,redacted,Поды стенда и их узел
+T01,evidence/01-slo/baseline.json,operator,2026-11-09T13:34:23+03:00,kt4,redacted,Хороший трафик GET /boards до inject
+T01,evidence/01-slo/sli-query.json,operator,2026-11-09T13:34:24+03:00,kt4,redacted,Короткое окно SLI; бюджет 30 дней посчитан в slo/profile.md
+T07,evidence/tests/T07-correlation.txt,operator,2026-11-09T13:34:30+03:00,kt4,redacted,Один trace_id в API, worker и collector
+T08,evidence/tests/T08-redaction.txt,operator,2026-11-09T13:34:30+03:00,kt4,redacted,student@example.test нет в логе API и collector; redaction в processor attributes/redact
+T04,evidence/02-reliability/dbslow.json,operator,2026-11-09T13:35:49+03:00,kt4,redacted,Deadline обрывает медленную зависимость и отдаёт устаревший снимок доски
+T03,evidence/02-reliability/replica.txt,operator,2026-11-09T13:37:01+03:00,kt4,redacted,Второй Pod обслуживает GET /boards, пока удалённый поднимается
+T02,evidence/04-observability/fast-burn.json,operator,2026-11-09T13:38:04+03:00,kt4,redacted,Синтетические 5xx открыли page CampusBoardFastBurn
+T09,evidence/04-observability/fast-burn-resolved.json,operator,2026-11-09T13:42:17+03:00,kt4,redacted,Page закрылся после kill switch; owner и runbook заданы в правиле
+T05,evidence/03-restore/validation.txt,operator,2026-11-09T13:42:23+03:00,kt4,redacted,DR получил dump, строка после dump на DR отсутствует
+T06,evidence/05-security/parity.txt,operator,2026-11-09T13:42:24+03:00,kt4,redacted,DR использует тот же образ, пользователя и default deny, пароль тот же Secret
+T10,evidence/05-security/least-privilege.txt,operator,2026-11-09T13:42:25+03:00,kt4,redacted,Оператору можно менять fault, читать Secret нельзя; intruder получает 403
+T11,evidence/05-security/runtime.txt,operator,2026-11-09T13:42:31+03:00,kt4,redacted,Privileged Pod отклонён, чужой namespace не открывает Postgres и не читает Secret
+T12,evidence/06-incident/baseline-after.txt,operator,2026-11-09T13:49:28+03:00,kt4,redacted,Inject, detect, kill switch, возврат SLI
+T12,evidence/06-incident/timeline.csv,operator,2026-11-09T13:49:28+03:00,kt4,redacted,Таймлайн инцидента

@@ -1,0 +1,10 @@
+10173 /tmp/campus.dump
+48bb6d4c6fbe757f0fbf81388b7cf6b48d767c8f099f7e4758a2a85bddde378c  /tmp/campus.dump
+NOTICE:  drop cascades to 4 other objects
+DETAIL:  drop cascades to table alert_events
+drop cascades to table boards
+drop cascades to table jobs
+drop cascades to table posts
+DROP SCHEMA
+CREATE SCHEMA
+RESTORE_OK

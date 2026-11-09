@@ -1,0 +1,237 @@
+{"ts": "2026-11-09T10:34:08+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "", "msg": "schema_ready"}
+----------------------------------------
+Exception occurred during processing of request from ('192.168.172.2', 46328)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/http/server.py", line 451, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/http/server.py", line 439, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/app/app.py", line 99, in do_POST
+    db.run_query(save, 2000, retries=1)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/db.py", line 90, in run_query
+    return fn(conn), attempt
+           ~~^^^^^^
+  File "/app/app.py", line 97, in save
+    telemetry.log("INFO", "alert_received", alertname=alertname, severity=severity, status=status)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: log() got multiple values for argument 'severity'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.172.2', 46350)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/http/server.py", line 451, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/http/server.py", line 439, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/app/app.py", line 99, in do_POST
+    db.run_query(save, 2000, retries=1)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/db.py", line 90, in run_query
+    return fn(conn), attempt
+           ~~^^^^^^
+  File "/app/app.py", line 97, in save
+    telemetry.log("INFO", "alert_received", alertname=alertname, severity=severity, status=status)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: log() got multiple values for argument 'severity'
+----------------------------------------
+{"ts": "2026-11-09T10:34:22+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "fd366060e3304767ae86f8694db9e405", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 14.5}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "cd9fbbddaf834f199424b4b196981130", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 45.7}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "3f600cc02c9d4cc3b1991cfe67aa097a", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 11.1}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "48651129195e468c826700cbd58402ca", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 10.1}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "de281dc32f064004a2405186ba0c8805", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 9.3}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "ae8817ae513747788665f8b497085dff", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 10.2}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "120c04ffddd34709965dbdf23dcac751", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 10.4}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "810cf5b54a91440389586c61b878173d", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 9.9}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "006ac781f38c4845bfe5ac9ee8f7d2c8", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 14.3}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "60abfa4fd2074653bc7be5cea9cf829c", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 28.0}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "cd6be5087c75470b9ef02a920caf31c6", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 25.9}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "8ddc92fcb4554a32bc81abba3b832946", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 14.4}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "578c4ebd55d14806a6050b670088f7e6", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 11.8}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "da335c913e1941d9922fa4cbc162cef9", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 10.6}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "8a7f00e879ad4d8ab4331c9f718bd05d", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 9.6}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "36ba28726b6f470bb3b86b4488586adc", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 11.1}
+----------------------------------------
+Exception occurred during processing of request from ('192.168.172.2', 33216)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/http/server.py", line 451, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/http/server.py", line 439, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/app/app.py", line 99, in do_POST
+    db.run_query(save, 2000, retries=1)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/db.py", line 90, in run_query
+    return fn(conn), attempt
+           ~~^^^^^^
+  File "/app/app.py", line 97, in save
+    telemetry.log("INFO", "alert_received", alertname=alertname, severity=severity, status=status)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: log() got multiple values for argument 'severity'
+----------------------------------------
+{"ts": "2026-11-09T10:34:11+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "", "msg": "schema_ready"}
+----------------------------------------
+Exception occurred during processing of request from ('192.168.172.2', 46314)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/http/server.py", line 451, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/http/server.py", line 439, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/app/app.py", line 99, in do_POST
+    db.run_query(save, 2000, retries=1)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/db.py", line 90, in run_query
+    return fn(conn), attempt
+           ~~^^^^^^
+  File "/app/app.py", line 97, in save
+    telemetry.log("INFO", "alert_received", alertname=alertname, severity=severity, status=status)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: log() got multiple values for argument 'severity'
+----------------------------------------
+----------------------------------------
+Exception occurred during processing of request from ('192.168.172.2', 46348)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/http/server.py", line 451, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/http/server.py", line 439, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/app/app.py", line 99, in do_POST
+    db.run_query(save, 2000, retries=1)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/db.py", line 90, in run_query
+    return fn(conn), attempt
+           ~~^^^^^^
+  File "/app/app.py", line 97, in save
+    telemetry.log("INFO", "alert_received", alertname=alertname, severity=severity, status=status)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: log() got multiple values for argument 'severity'
+----------------------------------------
+{"ts": "2026-11-09T10:34:22+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "0e8780a62a244e879589217c9b512f30", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 15.0}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "6bd272354be64debb2a24a7be468baf6", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 22.0}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "ccd55e7ae95a45688a81a56f8ec9712b", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 31.5}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "be77bd8c411445ed88e4fd4ed6a98ba0", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 22.6}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "17e4bc65ebf74baeaf270eb8d09f2839", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 19.8}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "7606faa68a06422f97cd4fcbf1f1e531", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 18.1}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "fe3cd414a1f04c1899432cec219db3b9", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 12.6}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "58b946ba84db48289a8364ad0385003c", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 11.5}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "4cc09ae1bb364f5e9847628c794524dc", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 9.9}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "829b32a2f106479aaa2bf31b334fb37f", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 9.5}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "76b561884a4542a8b6d70f494cce926a", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 9.7}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "762926a11ea04758b3c82611989d2401", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 38.0}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "48ec14ea4203457f8065dfd08b696c87", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 24.8}
+{"ts": "2026-11-09T10:34:23+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "1bcc12a9b30640c0bce7d12919bbb8e0", "msg": "request", "route": "/boards", "method": "GET", "status": 200, "elapsed_ms": 29.1}
+----------------------------------------
+Exception occurred during processing of request from ('192.168.172.2', 46356)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/http/server.py", line 451, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/http/server.py", line 439, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/app/app.py", line 99, in do_POST
+    db.run_query(save, 2000, retries=1)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/db.py", line 90, in run_query
+    return fn(conn), attempt
+           ~~^^^^^^
+  File "/app/app.py", line 97, in save
+    telemetry.log("INFO", "alert_received", alertname=alertname, severity=severity, status=status)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: log() got multiple values for argument 'severity'
+----------------------------------------
+{"ts": "2026-11-09T10:34:24+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "332ff4a8d7fc462abc1b8c835114c4a7", "msg": "request", "route": "/posts", "method": "POST", "status": 201, "elapsed_ms": 16.4}
+----------------------------------------
+Exception occurred during processing of request from ('192.168.172.2', 46358)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/http/server.py", line 451, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/http/server.py", line 439, in handle_one_request
+    method()
+    ~~~~~~^^
+  File "/app/app.py", line 99, in do_POST
+    db.run_query(save, 2000, retries=1)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/db.py", line 90, in run_query
+    return fn(conn), attempt
+           ~~^^^^^^
+  File "/app/app.py", line 97, in save
+    telemetry.log("INFO", "alert_received", alertname=alertname, severity=severity, status=status)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: log() got multiple values for argument 'severity'
+----------------------------------------
+{"ts": "2026-11-09T10:34:24+0000", "severity": "INFO", "service": "campus-api", "version": "kt4", "digest": "localhost:5001/campus-ready@sha256:f72793fb91330be41501e4951fa12313ecc85303d5821f5454e35733f63cd2d1", "trace_id": "ce6f490e82ca403190e8f987129e906a", "msg": "request", "route": "/posts", "method": "POST", "status": 200, "elapsed_ms": 11.7}
